@@ -10,4 +10,8 @@ func View(e *echo.Echo) {
 	e.GET("/", func(c echo.Context) error {
 		return lib.Render(c, view.HomePage())
 	})
+
+	e.GET("/login", func(c echo.Context) error {
+		return lib.Render(c, view.LoginPage())
+	})
 }

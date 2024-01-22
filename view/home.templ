@@ -2,14 +2,14 @@ package view
 
 import (
 	"github.com/carbonyde/tungsten/ui"
-	"github.com/3-lines-studio/minidrive/components"
+	"github.com/3-lines-studio/minidrive/component"
 )
 
 templ HomePage() {
-	@components.Html(ui.HtmlProps{
+	@component.Html(ui.HtmlProps{
 		Title: "Minidrive",
 	}) {
-		@components.Navbar()
+		@component.Navbar()
 		<main class="container flex flex-col items-center justify-center flex-1 h-full">
 			<section class="flex max-w-[900px] mb-10">
 				<div class="space-y-6 flex flex-col justify-center">
@@ -35,6 +35,6 @@ templ HomePage() {
 				</div>
 			</section>
 		</main>
-		@components.Footer()
+		@component.Footer()
 	}
 }

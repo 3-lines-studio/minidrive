@@ -1,6 +1,7 @@
 
 install:
 	npm install
+	go install github.com/joho/godotenv/cmd/godotenv@latest
 	go install github.com/a-h/templ/cmd/templ@latest
 	go install github.com/cosmtrek/air@latest
 
@@ -11,7 +12,7 @@ deploy:
 	fly deploy
 
 dev:
-	WATCH=true air
+	WATCH=true godotenv -f .env air
 
 air:
 	make templ
