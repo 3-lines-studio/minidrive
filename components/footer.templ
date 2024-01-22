@@ -1,0 +1,22 @@
+package components
+
+import (
+	"time"
+	"strconv"
+)
+
+templ Footer() {
+	<footer class="container flex items-center justify-between py-6">
+		<div>
+			<span class="font-bold">
+				With 💙 by
+			</span>
+			<span class="font-bold text-rose-500">
+				3 Lines Studio
+			</span>
+			<span class="font-bold">
+				© { strconv.Itoa(time.Now().Year()) }
+			</span>
+		</div>
+	</footer>
+}

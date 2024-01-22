@@ -1,0 +1,40 @@
+package components
+
+import (
+	"github.com/carbonyde/tungsten/ui"
+	"github.com/carbonyde/tungsten"
+	"github.com/3-lines-studio/minidrive/lib"
+)
+
+templ Html(props ui.HtmlProps) {
+	<!DOCTYPE html>
+	<html class="dark" lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<link rel="icon" href="/static/fav.ico" sizes="any"/>
+			<link rel="icon" href="/static/fav.svg" type="image/svg+xml"/>
+			<link rel="manifest" href="/static/app.webmanifest"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>{ props.Title }</title>
+			<meta name="title" content={ props.Title }/>
+			<meta name="description" content={ props.Description }/>
+			<meta name="keywords" content={ props.Keywords }/>
+			<meta property="og:type" content="website"/>
+			<meta property="og:url" content={ props.Url }/>
+			<meta property="og:title" content={ props.Title }/>
+			<meta property="og:description" content={ props.Description }/>
+			<meta property="og:image" content={ props.Image }/>
+			<meta name="theme-color" content={ props.Color }/>
+			<link rel="stylesheet" href="/static/styles.css"/>
+			@ui.ColorSchemeScript
+		</head>
+		<body hx-boost="true" class="flex flex-col min-h-dvh">
+			{ children... }
+			<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+			@tungsten.InlineScript("htmx.config.globalViewTransitions = true")
+			if lib.Env.Watch {
+				@ui.HotReloadScript
+			}
+		</body>
+	</html>
+}

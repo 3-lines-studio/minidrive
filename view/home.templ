@@ -1,0 +1,40 @@
+package view
+
+import (
+	"github.com/carbonyde/tungsten/ui"
+	"github.com/3-lines-studio/minidrive/components"
+)
+
+templ HomePage() {
+	@components.Html(ui.HtmlProps{
+		Title: "Minidrive",
+	}) {
+		@components.Navbar()
+		<main class="container flex flex-col items-center justify-center flex-1 h-full">
+			<section class="flex max-w-[900px] mb-10">
+				<div class="space-y-6 flex flex-col justify-center">
+					<h1 class="!leading-tight text-3xl md:text-6xl font-effect-hero font-gradient">
+						Seamless storage
+						<br/>
+						{ "for" } humans
+					</h1>
+					<p class="text-lg md:text-2xl">
+						Store, share, and collaborate on files and folders anywhere
+					</p>
+					<div>
+						<a href="/login">
+							<button type="button" class="inline-flex items-center gap-1 text-sky-700 hover:text-white border border-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-full text-base px-6 py-3.5 text-center me-2 mb-2 dark:border-sky-500 dark:text-sky-500 dark:hover:text-white dark:hover:bg-sky-500 dark:focus:ring-sky-800">
+								Get Started
+								@ui.LucideIcon("chevron-right", "h-4 w-4")
+							</button>
+						</a>
+					</div>
+				</div>
+				<div class="p-10">
+					@ui.LucideIcon("cloud-drizzle", "h-[300px] w-[300px]")
+				</div>
+			</section>
+		</main>
+		@components.Footer()
+	}
+}
